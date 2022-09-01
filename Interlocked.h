@@ -20,13 +20,13 @@ int __InterlockedSub(volatile int* localtion1, int value) noexcept {
 }
 
 inline
-int __InterlockedIncrement(volatile int* localtion1) {
+int __InterlockedIncrement(volatile int* localtion1) noexcept {
     return __InterlockedAdd(localtion1, 1);
 }
 
 inline
-int __InterlockedIncrement(volatile int* localtion1) {
-    return __InterlockedAdd(localtion1, 1);
+int __InterlockedDecrement(volatile int* localtion1) noexcept {
+    return __InterlockedSub(localtion1, 1);
 }
 
 int __InterlockedExchange(volatile int* localtion1, int value) noexcept {
